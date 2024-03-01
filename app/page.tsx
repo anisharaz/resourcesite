@@ -1,3 +1,9 @@
+import Navbar from "./components/navbar/Navbar";
+
 export default function Home() {
-  return <div>Init State</div>;
+  return (
+    <div className="">
+      <Navbar />
+    </div>
+  );
 }
