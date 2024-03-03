@@ -23,12 +23,12 @@ function Homepage() {
           Banks
         </div>
       </div>
-      <div className="flex justify-center mt-3">
-        <Image src={heroimage} alt="" className="w-auto h-32 p-4" />
-        <div className="heroText text-tert text-xl text-center bg-sec flex items-center p-3">
-          Flip & Start Reading
+      <div className="flex justify-center items-center mt-3 ">
+        <Image src={heroimage} alt="" className="heroText w-auto h-32 p-4 " />
+        <div className="heroText text-tert text-base text-center p-3 ">
+          Hate Downloading ?, Yes !
           <br />
-          No Download
+          Just Flip & Start Reading
         </div>
       </div>
       <Typing />

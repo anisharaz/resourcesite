@@ -29,9 +29,11 @@ function Navbar() {
             Home
           </div>
         </a>
+        <div>|</div>
         <a href="">
           <div className="">About</div>
         </a>
+        <div>|</div>
         <a href="">
           <div className="flex content-center items-center">
             <svg
