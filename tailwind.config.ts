@@ -19,6 +19,7 @@ const config: Config = {
       sec: "#301E67",
       tert: "#B6EADA",
     },
+    fontFamily: {},
   },
   plugins: [],
 };
