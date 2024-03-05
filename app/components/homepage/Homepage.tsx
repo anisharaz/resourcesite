@@ -4,7 +4,7 @@ import "./homepage.scss";
 import Typing from "./typing/Typing";
 function Homepage() {
   return (
-    <div className="h-screen bg-pri">
+    <div className="home bg-pri">
       <form className="max-w-sm mx-auto pt-2 ">
         <select
           id="countries"

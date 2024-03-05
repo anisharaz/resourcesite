@@ -13,14 +13,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Subjectsmodule {
-  subCode          String  @unique
-  module           Json
+model subjectsmodule {
+  subCode String @unique
+  module  Json
 }
 
-model Branchsemsubject {
-  id               Int     @id @default(autoincrement())
-  branch          String  
-  sem             Int
-  subjectcodes    Json
+model branchsemsubject {
+  id           Int    @id @default(autoincrement())
+  branch       String
+  sem          Int
+  subjectcodes Json
 }

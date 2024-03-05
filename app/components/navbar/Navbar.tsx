@@ -3,7 +3,7 @@ import Image from "next/image";
 import logo from "./assets/logo.png";
 function Navbar() {
   return (
-    <div className="navbar flex text-tert w-full bg-sec">
+    <div className="navbar flex text-tert w-full bg-sec h-12">
       <a href="#">
         <div className="flex content-center items-center p-3">
           <Image src={logo} alt="" className="logo h-7 w-auto rounded-full" />

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Space_Mono, Roboto } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "./components/navbar/Navbar";
 const RobotoFont = Roboto({
   subsets: ["latin"],
   weight: ["400", "400"],
@@ -19,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={RobotoFont.className}>{children}</body>
+      <body className={RobotoFont.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
