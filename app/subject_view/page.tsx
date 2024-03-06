@@ -12,7 +12,10 @@ export default async function subject_view({
   if (data_modules.length == 0) {
     return (
       <div className="text-tert h-screen bg-pri ">
-        NO Modules For the Subject
+        {"NO Modules For the Subject:" +
+          searchParams.subject_name +
+          " Subject_code:" +
+          searchParams.subject_code}
       </div>
     );
   }
