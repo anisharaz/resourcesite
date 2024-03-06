@@ -1,12 +1,13 @@
+import Link from "next/link";
 import "./branch_view.scss";
 import { get_branch } from "@/app/actions/database";
+import { JsonArray, JsonObject } from "@prisma/client/runtime/library";
 export default async function branch_view({
   params,
 }: {
   params: { branch_code: string };
 }) {
   const branch_data = await get_branch(params.branch_code);
-  console.log(branch_data);
   if (branch_data.length == 0) {
     return (
       <div className="branch_view items-center bg-pri text-tert">
@@ -16,15 +17,33 @@ export default async function branch_view({
   }
   const semData = branch_data.map((item) => {
     var subjects;
-    var subject_codes;
+    var subject_codes: (
+      | string
+      | number
+      | boolean
+      | JsonObject
+      | JsonArray
+      | null
+      | undefined
+    )[];
     if (typeof item.subjectcodes === "object" && item.subjectcodes !== null) {
       subjects = Object.keys(item.subjectcodes);
       subject_codes = Object.values(item.subjectcodes);
     }
-    const subject_div = subjects?.map((sub) => {
+    const subject_div = subjects?.map((sub, index) => {
       return (
-        <div className="">
-          <p>{sub}</p>
+        <div className="" key={sub}>
+          <Link
+            href={{
+              pathname: "/subject_view",
+              query: {
+                subject_name: sub,
+                subject_code: subject_codes[index] as string,
+              },
+            }}
+          >
+            {sub}
+          </Link>
         </div>
       );
     });

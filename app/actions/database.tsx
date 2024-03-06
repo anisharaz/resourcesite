@@ -6,7 +6,7 @@ export async function get_branch(branch_name: string) {
       branch: branch_name,
     },
   });
-  console.log(data);
+  // console.log(data);
 
   return data;
 }
@@ -23,6 +23,30 @@ export async function put_branch(data: {
       subjectcodes: data.subjectcodes,
     },
   });
-  console.log(res);
+  // console.log(res);
   return res;
+}
+
+export async function put_subjects_module(data: {
+  subCode: string;
+  module: {};
+}) {
+  const res = await prisma.subjectsmodule.create({
+    data: {
+      subCode: data.subCode,
+      module: data.module,
+    },
+  });
+  // console.log(res);
+  return res;
+}
+
+export async function get_subjects_module(subCode?: string) {
+  const data = await prisma.subjectsmodule.findMany({
+    where: {
+      subCode: subCode,
+    },
+  });
+  // console.log(data);
+  return data;
 }

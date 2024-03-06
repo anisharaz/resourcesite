@@ -1,3 +1,13 @@
-export default function modules_view() {
-  return <div>In modules View</div>;
+export default function modules_view({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string };
+}) {
+  return (
+    <div>
+      {searchParams.module_path +
+        " " +
+        JSON.parse(searchParams.other_modules)[2]}
+    </div>
+  );
 }

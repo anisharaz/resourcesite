@@ -2,9 +2,9 @@
 import Link from "next/link";
 import Homepage from "./components/homepage/Homepage";
 import Footer from "./components/navbar/footer";
-import { put_branch } from "./actions/database";
+import { put_branch, put_subjects_module } from "./actions/database";
 export default async function Home() {
-  // const data = {
+  // const data_branch = {
   //   branch: "cse",
   //   sem: 3,
   //   subjectcodes: {
@@ -13,21 +13,50 @@ export default async function Home() {
   //     python: "py",
   //   },
   // };
+  // const data_submodule = {
+  //   subCode: "c++",
+  //   module: {
+  //     module1: "/path/to/module/1",
+  //     module2: "/path/to/module/2",
+  //     module3: "/path/to/module/3",
+  //   },
+  // };
   return (
     <div className="">
       {/* <button
         onClick={async () => {
-          await put_branch(data);
+          await put_subjects_module(data_submodule);
         }}
       >
         upload
       </button> */}
       {/* <Homepage /> */}
-      {/* <Link href="/branch_view">branch_view</Link>
+      <Link
+        href={{
+          pathname: "/branch_view",
+          query: { branch_code: "cse" },
+        }}
+      >
+        branch_view
+      </Link>
       <br />
-      <Link href="/modules_view">modules_view</Link>
+      <Link
+        href={{
+          pathname: "/modules_view",
+          // query: { subject_code: "java" },
+        }}
+      >
+        module_view
+      </Link>
       <br />
-      <Link href="/subject_view">subject_view</Link> */}
+      <Link
+        href={{
+          pathname: "/subject_view",
+          query: { subject_code: "java", subject_name: "java" },
+        }}
+      >
+        subject_view
+      </Link>
       {/* <Footer /> */}
     </div>
   );
