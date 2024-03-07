@@ -32,29 +32,25 @@ export default async function Branch_view({
     }
     const subject_div = subjects?.map((sub, index) => {
       return (
-        <div
-          className=" w-fit text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-          key={sub}
+        <Link
+          href={{
+            pathname: "/subject_view",
+            query: {
+              subject_name: sub,
+              subject_code: subject_codes[index] as string,
+            },
+          }}
+          className="w-44 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
         >
-          <Link
-            href={{
-              pathname: "/subject_view",
-              query: {
-                subject_name: sub,
-                subject_code: subject_codes[index] as string,
-              },
-            }}
-          >
-            {sub}
-          </Link>
-        </div>
+          {sub}
+        </Link>
       );
     });
     return (
       <div className="pt-4" key={item.id}>
-        <p className="text-2xl">{"Sem - " + item.sem}</p>
+        <p className="text-2xl pl-3">{"Sem - " + item.sem}</p>
         <hr />
-        <div className="subject-list">{subject_div}</div>
+        <div className="subject-list m-4">{subject_div}</div>
       </div>
     );
   });

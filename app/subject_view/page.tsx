@@ -42,13 +42,15 @@ export default async function Subject_view({
           }}
           key={index}
         >
-          <div className="text-tert flex gap-4 m-3">
-            <div className="w-32 h-28 bg-slate-500 rounded-2xl text-center ">
-              {"M-" + (index + 1)}
-            </div>
-            <div>
+          <div className="text-tert flex gap-4 m-3 bg-sky-900 w-4/5 2xl:w-1/2 rounded-xl">
+            <div className="flex justify-center items-center w-32 h-28 bg-cyan-600 rounded-2xl text-center ">
               <div>{"M-" + (index + 1)}</div>
-              <div>{module_name}</div>
+            </div>
+            <div className="flex justify-center items-center">
+              <div>
+                <div>{"M-" + (index + 1)}</div>
+                <div>{module_name}</div>
+              </div>
             </div>
           </div>
         </Link>
@@ -63,8 +65,6 @@ export default async function Subject_view({
         <p>{"Subject_name: " + searchParams.subject_name}</p>
         <p>{"Subject_code: " + searchParams.subject_code}</p>
       </div>
-      <hr className="" />
-      {"module list:"}
       <hr className="" />
       <div className="p-2">{module_div}</div>
     </div>

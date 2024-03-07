@@ -21,7 +21,7 @@ const PDF: React.FC<{ module_pdf_path: string }> = ({ module_pdf_path }) => {
 
           pspdfKitInstance.load({
             container,
-            document: "/doc.pdf",
+            document: module_pdf_path,
             baseUrl: `${window.location.protocol}//${window.location.host}/`,
           });
         }
