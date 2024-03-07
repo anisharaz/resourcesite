@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
-const PDF: React.FC = () => {
+const PDF: React.FC<{ module_pdf_path: string }> = ({ module_pdf_path }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
 
-    if (container && typeof window !== 'undefined') {
-      import('pspdfkit').then((PSPDFKit) => {
+    if (container && typeof window !== "undefined") {
+      import("pspdfkit").then((PSPDFKit) => {
         if (PSPDFKit && PSPDFKit.default) {
           // Access the default export of PSPDFKit
           const pspdfKitInstance = PSPDFKit.default;
@@ -21,7 +21,7 @@ const PDF: React.FC = () => {
 
           pspdfKitInstance.load({
             container,
-            document: '/doc.pdf',
+            document: "/doc.pdf",
             baseUrl: `${window.location.protocol}//${window.location.host}/`,
           });
         }
@@ -29,7 +29,7 @@ const PDF: React.FC = () => {
     }
   }, []);
 
-  return <div ref={containerRef} style={{ height: '100vh' }} />;
+  return <div ref={containerRef} style={{ height: "100vh" }} />;
 };
 
 export default PDF;

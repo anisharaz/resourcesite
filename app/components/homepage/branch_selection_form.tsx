@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-function branch_selection_form() {
+export default function Branch_selection_form() {
   const [branch, setBranch] = useState("");
   return (
     <>
@@ -33,5 +33,3 @@ function branch_selection_form() {
     </>
   );
 }
-
-export default branch_selection_form;

@@ -2,7 +2,7 @@ import Link from "next/link";
 import "./branch_view.scss";
 import { get_branch } from "@/app/actions/database";
 import { JsonArray, JsonObject } from "@prisma/client/runtime/library";
-export default async function branch_view({
+export default async function Branch_view({
   params,
 }: {
   params: { branch_code: string };

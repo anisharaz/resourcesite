@@ -2,7 +2,7 @@ import { Prisma } from "@prisma/client";
 import { get_subjects_module } from "../actions/database";
 import Link from "next/link";
 
-export default async function subject_view({
+export default async function Subject_view({
   searchParams,
 }: {
   searchParams: { [key: string]: string };
@@ -34,8 +34,10 @@ export default async function subject_view({
           href={{
             pathname: "/modules_view",
             query: {
-              module_path: module_path_arr[index] as string,
-              other_modules: JSON.stringify(module_path_arr),
+              current_module_name: module_name,
+              current_module_path: module_path_arr[index] as string,
+              other_modules_path: JSON.stringify(module_path_arr),
+              other_modules_name: JSON.stringify(modules_name_arr),
             },
           }}
           key={index}

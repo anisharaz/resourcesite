@@ -1,4 +1,4 @@
-export default function subject_view_layout({
+export default function Subject_view_layout({
   children, // will be a page or nested layout
 }: {
   children: React.ReactNode;
