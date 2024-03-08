@@ -7,8 +7,9 @@ const RobotoFont = Roboto({
   weight: ["400", "400"],
 });
 export const metadata: Metadata = {
-  title: "Learning Resources",
-  description: "Jain University Learning Resources",
+  metadataBase: new URL("https://notes.aaraz.me"),
+  title: "Learning Resources | Modules Pdf",
+  description: "Jain University Learning Resources Modules Pdf",
 };
 
 export default function RootLayout({

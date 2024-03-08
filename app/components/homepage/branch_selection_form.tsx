@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Branch_selection_form() {
-  const [branch, setBranch] = useState("");
+  const [branch, setBranch] = useState("cse");
   return (
     <>
       <form className="max-w-sm mx-auto pt-4">
