@@ -1,7 +1,10 @@
 -- CreateTable
 CREATE TABLE "subjectsmodule" (
+    "id" SERIAL NOT NULL,
     "subCode" TEXT NOT NULL,
-    "module" JSONB NOT NULL
+    "module" JSONB NOT NULL,
+
+    CONSTRAINT "subjectsmodule_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
