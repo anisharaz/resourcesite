@@ -9,6 +9,7 @@ const nextConfig = {
         ],
     },
     webpack: (config) => {
+        config.externals = [...config.externals, "canvas", "jsdom"];
         config.module.rules.push({
             test: /\.node/,
             use: "raw-loader",
