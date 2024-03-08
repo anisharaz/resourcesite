@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "next": "14.1.0",
-    "pspdfkit": "^2024.2.0",
+    "pdfjs-dist": "^3.11.174",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.71.1",
@@ -26,6 +28,7 @@
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "prisma": "^5.10.2",
+    "raw-loader": "^4.0.2",
     "tailwindcss": "^3.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
