@@ -14,7 +14,10 @@ export default function Module_selection({
   othermodule_path: { [key: string]: string };
   othermodule_name: { [key: string]: string };
 }) {
-  const [modulePathName, setmodulePathName] = useState<string[]>([]);
+  const [modulePathName, setmodulePathName] = useState<string[]>([ // Added default value
+    current_module_path,
+    current_module_name
+  ]);
 
   const module_name = Object.values(othermodule_name);
 
