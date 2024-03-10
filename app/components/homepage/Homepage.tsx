@@ -6,15 +6,15 @@ import Branch_selection from "./branch_selection_form";
 function Homepage() {
   return (
     <div className="home bg-pri">
-      <Branch_selection />
-      <div className="flex justify-center 2xl:p-14 pt-10 pb-10 ">
-        <div className="text-tert text-5xl leading-normal text-right tracking-wider underline underline-offset-8">
-          Explore Notes <br className="2xl:hidden" /> & Question{" "}
+      <div className="flex justify-center 2xl:p-14 pt-4 pb-4 ">
+        <div className="text-tert text-5xl leading-normal text-right tracking-wider ">
+          Explore Notes <br className="2xl:hidden" /> & Question
           <br className="2xl:hidden" />
           Banks
         </div>
       </div>
-      <div className="flex 2xl:gap-44 justify-center items-center mt-8 2xl:mt-14">
+      <Branch_selection />
+      <div className="flex 2xl:gap-44 justify-center items-center mt-14 2xl:mt-28 ">
         <Image
           src={heroimage}
           alt=""

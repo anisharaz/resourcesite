@@ -50,7 +50,7 @@ export default async function Branch_view({
     return (
       <div className="pt-4" key={item.id}>
         <p className="text-2xl pl-3">{"Sem - " + item.sem}</p>
-        <hr />
+        <div className="border-t-2 border-tert mt-2"></div>
         <div className="subject-list m-4">{subject_div}</div>
       </div>
     );
