@@ -10,7 +10,7 @@ async function getUser(email: string): Promise<{
 } | null> {
   try {
     const user = await prisma.users.findUnique({
-      where: { email },
+      where: { email: email },
       select: {
         email: true,
         password: true,

@@ -14,7 +14,8 @@ datasource db {
 }
 
 model subjectsmodule {
-  subCode String @id @unique
+  id      Int    @id @default(autoincrement())
+  subCode String @unique
   module  Json
 }
 

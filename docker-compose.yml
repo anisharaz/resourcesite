@@ -1,0 +1,31 @@
+ 
+version: "3.8"
+name: resourcesite
+services:
+  app:
+    build: .
+    networks:
+      resourcesitenewtork:
+        ipv4_address: 11.0.0.13
+    depends_on:
+      db:
+        condition: service_healthy
+    
+  db:
+    image: postgres
+    networks:
+      resourcesitenewtork:
+        ipv4_address: 11.0.0.9
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: kali
+    healthcheck:
+      test: ["CMD", "pg_isready","-U","postgres", "-h", "localhost", "-p", "5432"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    
+networks:
+  resourcesitenewtork:
+    name: deploy
+    external: true

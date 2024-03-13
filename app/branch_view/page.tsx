@@ -15,7 +15,8 @@ export default async function Branch_view({
       </div>
     );
   }
-  const semData = branch_data.map((item) => {
+
+  const semData = branch_data.map((item: any) => {
     var subjects;
     var subject_codes: (
       | string
