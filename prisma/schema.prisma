@@ -24,3 +24,12 @@ model branchsemsubject {
   sem          Int
   subjectcodes Json
 }
+
+model users {
+  id        Int    @id @default(autoincrement())
+  email     String @unique
+  password  String
+  name      String
+  role      String
+  privilage String
+}

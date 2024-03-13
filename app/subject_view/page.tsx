@@ -41,18 +41,27 @@ export default async function Subject_view({
             },
           }}
           key={index}
+          className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
-          <div className="text-tert flex gap-4 m-3 bg-sky-900 w-4/5 2xl:w-1/2 rounded-xl">
-            <div className="flex justify-center items-center w-32 h-28 bg-cyan-600 rounded-2xl text-center ">
-              <div>{"M-" + (index + 1)}</div>
-            </div>
-            <div className="flex justify-center items-center">
-              <div>
-                <div>{"M-" + (index + 1)}</div>
-                <div>{module_name}</div>
-              </div>
-            </div>
-          </div>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {"Module " + (index + 1)}
+          </h5>
+          <p className="font-normal text-gray-700 dark:text-gray-400">
+            About: Here are the biggest enterprise technology acquisitions of
+            2021 so far, in reverse chronological order.
+          </p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+              clipRule="evenodd"
+            />
+          </svg>
         </Link>
       );
     }
@@ -66,7 +75,9 @@ export default async function Subject_view({
         <p>{"Subject_code: " + searchParams.subject_code}</p>
       </div>
       <hr className="" />
-      <div className="p-2">{module_div}</div>
+      <div className="p-2">
+        <div className="flex gap-2 flex-col 2xl:flex-row">{module_div}</div>
+      </div>
     </div>
   );
 }
