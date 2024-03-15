@@ -10,6 +10,7 @@ async function main() {
         DAA: "22CSE249",
         DCN: "22CSE107",
         TOC: "22CSE330",
+        ETP: "ETP",
       },
     },
   });
@@ -41,6 +42,13 @@ async function main() {
         module: {
           module1: "/22AECCE11/22AECCE11_1.pdf",
           module2: "/22AECCE11/22AECCE11_2.pdf",
+        },
+      },
+      {
+        subCode: "ETP",
+        module: {
+          module1: "/ETP/ETP_1.pdf",
+          module2: "/ETP/ETP_2.pdf",
         },
       },
     ],
