@@ -1,11 +1,9 @@
-import Link from "next/link";
-import Homepage from "./components/homepage/Homepage";
-import Footer from "./components/navbar/footer";
-export default async function Home() {
-  return (
-    <div className="">
-      <Homepage />
-      <Footer />
+import Landing from "./components/landing/page"
+
+export default function(){
+  return(
+    <div>
+      <Landing/>
     </div>
-  );
+  )
 }
