@@ -18,10 +18,16 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
+import { useState, useEffect } from 'react'
 
 export default function() {
+  const [isClient, setIsClient] = useState(false)
   const [open, setOpen] = React.useState(false)
   const isDesktop = useMediaQuery("(min-width: 768px)")
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   if (isDesktop) {
     return (
@@ -30,17 +36,14 @@ export default function() {
              <Image src={logo} alt="" className="logo h-7 w-auto rounded-full" />
           </div>
           <div>
-            <Button className="mr-4 text-xl text-white" variant="link"><Link href={"/"}>Home</Link></Button>
-            <Button className="mr-4 text-xl text-white" variant="link"><Link href={"/admin"}>Admin</Link></Button>
-            <Button className="mr-4 text-xl text-white" variant="link"><Link href={"/"}>About</Link></Button>
-            <Button className="mr-4 text-xl text-white" variant="link"><Link href={"/"}>Contact</Link></Button>
+            { isClient ? <><Button className="mr-4 text-xl text-white" variant="link"><Link href={"/"}>Home</Link></Button><Button className="mr-4 text-xl text-white" variant="link"><Link href={"/admin"}>Admin</Link></Button><Button className="mr-4 text-xl text-white" variant="link"><Link href={"/"}>About</Link></Button><Button className="mr-4 text-xl text-white" variant="link"><Link href={"/"}>Contact</Link></Button></> : ""}
           </div>
         </div>
     )
   }
 
   return (
-      <div className=" flex justify-between bg-[#301E67]">
+      <div className="flex justify-between bg-[#301E67] p-3">
         <div className="ml-2 mt-2">
           <Image src={logo} alt="" className="logo h-7 w-auto rounded-full" />
         </div>
