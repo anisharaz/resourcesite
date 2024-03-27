@@ -12,7 +12,7 @@ import {
 import { Link } from "lucide-react";
 
 
-export default function(props:{image: any, courseName: string, note: string, path: string}){
+const SingleCard = (props:{image: any, courseName: string, note: string, path: string}) => {
     return(
         <div className="flex justify-center mt-5">
             <Card style={{background: "#B6EADA"}} className=" w-5/6">
@@ -34,3 +34,5 @@ export default function(props:{image: any, courseName: string, note: string, pat
         </div>
     )
 }
+
+export default SingleCard;

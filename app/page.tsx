@@ -1,9 +1,10 @@
 import Landing from "./components/landing/page"
 
-export default function(){
+const Final = () => {
   return(
     <div>
       <Landing/>
     </div>
   )
 }
+export default Final;
