@@ -2,10 +2,11 @@ name: Push & Deploy
 on:
   push:
     branches:
-      - "main"
+      - "master"
 jobs:
   docker:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
