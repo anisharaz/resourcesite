@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model branches {
+  id             Int        @id @default(autoincrement())
+  branch_name    String     @unique
+  branch_code    String     @unique
+  status         String
+  available_sems Json
+  subjects       subjects[]
+}
+
+model semesters {
+  id         Int        @id @default(autoincrement())
+  sem_number Int        @unique
+  subjects   subjects[]
+}
+
+model subjects {
+  id                 Int       @id @default(autoincrement())
+  branche            branches  @relation(fields: [branch_code], references: [branch_code])
+  branch_code        String
+  semester           semesters @relation(fields: [semesters_num], references: [sem_number])
+  semesters_num      Int
+  subject_code       String    @unique
+  subject_name       String
+  subject_short_name String
+  module             modules[]
+}
+
+model modules {
+  id                 Int             @id @default(autoincrement())
+  subjects           subjects        @relation(fields: [subject_code], references: [subject_code])
+  subject_code       String
+  module_name        String
+  module_number      Int
+  module_description String
+  module_link        String
+  module_addons      module_addons[]
+}
+
+model module_addons {
+  id         Int     @id @default(autoincrement())
+  modules    modules @relation(fields: [modulesId], references: [id])
+  modulesId  Int
+  addon_name String
+  addon_link String
+  addon_type String
+}
+
+model users {
+  id        Int    @id @default(autoincrement())
+  email     String @unique
+  password  String
+  name      String
+  role      String
+  privilage String
+}
