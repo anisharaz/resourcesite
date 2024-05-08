@@ -35,7 +35,7 @@ export function SingleCard(props: {
           </Button>
         </CardFooter>
         <div className="flex justify-center text-[#ff0000]">
-          <p className={props.note === "available" ? "text-[#00ff00]" : ""}>
+          <p className={props.note === "available" ? "text-emerald-600	 font-bold" : ""}>
             {props.note}
           </p>
         </div>

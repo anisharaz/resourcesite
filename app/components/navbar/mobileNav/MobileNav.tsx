@@ -34,6 +34,13 @@ const MobileNav = () => {
             Admin
           </Link>
         </Button>
+        <Button variant="link">
+          <Link
+            href={"https://github.com/anisharaz/resourcesite.git"}
+            className="text-white">
+            Github
+          </Link>
+        </Button>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
             <Button style={{ background: "#070041" }} variant="outline">
