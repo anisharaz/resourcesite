@@ -25,7 +25,7 @@ function Hero() {
       />
       <div className="absolute text-3xl md:text-5xl lg:text-6xl top-12 md:top-1/3 left-7 md:left-20 text-blue-600 font-extrabold flex flex-col gap-2">
         <div>One Place For All Notes & resources</div>
-        <div className="text-base md:text-2xl lg:text-3xl text-white">
+        <div className="text-base md:text-2xl lg:text-3xl text-[#3df700]">
           Scroll And Start Exploring Course wise
         </div>
       </div>
