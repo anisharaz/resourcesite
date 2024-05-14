@@ -1,4 +1,3 @@
-"use client";
 import FetchedCards from "./FetchedCards";
 export function Cards() {
   return (

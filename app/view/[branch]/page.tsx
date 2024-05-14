@@ -10,7 +10,7 @@ async function Semesters({ params }: { params: { branch: string } }) {
       <Link
         href={`/view/${params.branch}/${sem}`}
         key={v4()}
-        className="block backdrop-blur-sm bg-white/20 max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-white/10 dark:bg-white/20 dark:border-gray-700 dark:hover:bg-white/10"
+        className="block backdrop-blur-sm bg-white/20 max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-white/10 dark:bg-white/10 dark:border-gray-700 dark:hover:bg-white/5 dark:hover:border-sky-800"
       >
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {"SEMESTER " + sem}

@@ -18,10 +18,14 @@ const Navbar = function () {
 
       <div className="hidden md:flex md:gap-2 justify-center items-center">
         <Button size={"nav"} variant="link">
-          <Link href={"/"}>Home</Link>
+          <Link href={"/"} className="text-white">
+            Home
+          </Link>
         </Button>
         <Button size={"nav"} variant="link">
-          <Link href={"/admin"}>Admin</Link>
+          <Link href={"/admin"} className="text-white">
+            Admin
+          </Link>
         </Button>
         <Button size={"nav"} variant="default">
           <Link
