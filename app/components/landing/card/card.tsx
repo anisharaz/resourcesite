@@ -30,12 +30,16 @@ export function SingleCard(props: {
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <Button asChild variant={"outline"}>
+          <Button asChild variant={"secondary"}>
             <a href={props.path}>View notes</a>
           </Button>
         </CardFooter>
         <div className="flex justify-center text-[#ff0000]">
-          <p className={props.note === "available" ? "text-emerald-600	 font-bold" : ""}>
+          <p
+            className={
+              props.note === "available" ? "text-emerald-600 font-bold" : ""
+            }
+          >
             {props.note}
           </p>
         </div>
