@@ -1,23 +1,12 @@
-"use client";
 import { SingleCard } from "./card";
+import prisma from "@/app/lib/db";
 import web from "../assets/web.jpeg";
-import { useEffect, useState } from "react";
-import { BranchCardSkeletons } from "../../skeletons";
-
-type branch = {
-  branch_code: string;
-  status: string;
-  branch_name: string;
-}[];
-function FetchedCards() {
-  const [branch, setBranch] = useState<branch>([]);
-  useEffect(() => {
-    fetch("/api/branch").then((res) => {
-      res.json().then((data) => {
-        setBranch(data);
-      });
-    });
-  }, []);
+async function FetchedCards() {
+  const branch = await prisma.branches.findMany({
+    orderBy: {
+      id: "asc",
+    },
+  });
 
   const branch_card = branch.map((item, index) => {
     return (
@@ -30,9 +19,6 @@ function FetchedCards() {
       />
     );
   });
-  if (branch.length == 0) {
-    return <BranchCardSkeletons />;
-  }
   return <>{branch_card}</>;
 }
 
