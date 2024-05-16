@@ -29,7 +29,7 @@ const PdfViewer = ({ url }: {url: string}) => {
   return (
     <div>
       {pdfData ? (
-        <iframe src={pdfData} width="100%" className='h-screen' />
+        <iframe src={pdfData} className='w-full h-screen' />
       ) : (
         <div className='w-full h-screen flex items-center justify-center'>
           <div role="status">
