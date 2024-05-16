@@ -21,7 +21,7 @@ RUN addgroup --system --gid 1001 app
 RUN adduser --system --uid 1001 app
 RUN mkdir .next
 RUN chown app:app .next
-# COPY --from=builder --chown=app:app /app/public ./public
+COPY --from=builder --chown=app:app /app/public ./public
 COPY --from=builder --chown=app:app /app/.next/standalone ./
 COPY --from=builder --chown=app:app /app/.next/static ./.next/static
 
