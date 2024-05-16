@@ -17,7 +17,7 @@ async function Mod_view({
   const modules = subject_data?.module;
   const module_nav_div = modules?.map((mod) => {
     return (
-      <div key={v4()}>
+      <div className="p-2" key={v4()}>
         <Module_nav
           url={`/view/${params.branch}/${params.sem}/${params.subject_code}/${mod.id}`}
           name={"Module:" + mod.module_number}
@@ -27,16 +27,16 @@ async function Mod_view({
   });
   return (
     <>
-      <div className="lg:flex">
-        <div className="lg:h-screen bg-blue-100 lg:mx-1 lg:px-4 flex flex-col gap-2">
+      <div className="lg:flex font-serif">
+        <div className="p-2 lg:h-screen bg-[#070041] text-white lg:px-4 flex flex-col gap-2">
           <div>
-            <div className="text-xl ">Modules List</div>
-            <div className="flex lg:flex-col flex-wrap gap-2 mt-2">
+            <div className="text-4xl lg:text-5xl ">Modules List</div>
+            <div className="flex flex-wrap lg:flex-col gap-2 mt-2">
               {module_nav_div}
             </div>
           </div>
-          <div>
-            <div className="text-xl ">Additional</div>
+          <div className="py-2 relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left cursor-pointer">
+            <div className="text-3xl lg:text-4xl">Additional</div>
           </div>
         </div>
         <div className="flex-1 h-screen">
