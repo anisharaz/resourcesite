@@ -1,19 +1,18 @@
 "use client";
 import * as React from "react";
-import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 function Module_nav({ url, name }: { url: string; name: string }) {
   const router = useRouter();
   return (
     <>
-      <div className=" relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">
+      <div className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-sky-400 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left hover:text-sky-400">
         <button
           className="flex items-center"
           onClick={() => {
             router.replace(url);
           }}
         >
-          <div className="text-2xl lg:text-3xl pr-1">{name}</div>
+          <div className="text-lg lg:text-3xl pr-1">{name}</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
