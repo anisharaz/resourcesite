@@ -1,9 +1,10 @@
-import Landing from "./components/landing/LandingPage";
+import HomePage from "./components/HomePage/HomePage";
 export const dynamic = "force-dynamic";
+
 const Home = () => {
   return (
     <>
-      <Landing />
+      <HomePage />
     </>
   );
 };

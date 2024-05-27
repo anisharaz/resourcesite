@@ -1,13 +1,12 @@
 import { SingleCard } from "./card";
 import prisma from "@/app/lib/db";
-import web from "../assets/web.jpeg";
-async function FetchedCards() {
+import web from "../../assets/web.jpeg";
+export default async function BranchCards() {
   const branch = await prisma.branches.findMany({
     orderBy: {
       id: "asc",
     },
   });
-
   const branch_card = branch.map((item, index) => {
     return (
       <SingleCard
@@ -21,5 +20,3 @@ async function FetchedCards() {
   });
   return <>{branch_card}</>;
 }
-
-export default FetchedCards;

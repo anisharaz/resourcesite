@@ -1,6 +1,6 @@
 import Image from "next/image";
-import anish from "./assets/anish.jpeg";
-import thinley from "./assets/thinley.jpeg";
+import anish from "../assets/anish.jpeg";
+import thinley from "../assets/thinley.jpeg";
 export default function Footer() {
   return (
     <>

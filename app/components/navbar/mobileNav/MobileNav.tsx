@@ -18,7 +18,6 @@ const MobileNav = () => {
       <DrawerTrigger asChild>
         <div className="flex justify-end">
           <Button style={{ background: "#301E67" }} size={"nav"}>
-            {/* Burger menu icon */}
             <MenuIcon className="text-white h-5 w-5" />
           </Button>
         </div>
@@ -37,7 +36,8 @@ const MobileNav = () => {
         <Button variant="link">
           <Link
             href={"https://github.com/anisharaz/resourcesite.git"}
-            className="text-white">
+            className="text-white"
+          >
             Github
           </Link>
         </Button>
