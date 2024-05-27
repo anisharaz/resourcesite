@@ -30,13 +30,17 @@ async function Mod_view({
       <div className="lg:flex font-serif">
         <div className="lg:p-2 lg:h-screen bg-[#070041] text-white lg:px-4 flex flex-col">
           <div>
-            <div className="text-xl lg:text-4xl underline underline-offset-4 lg:underline-offset-8 lg:py-4 ">Modules List</div>
+            <div className="text-xl lg:text-4xl underline underline-offset-4 lg:underline-offset-8 lg:py-4 ">
+              Modules List
+            </div>
             <div className="flex flex-wrap lg:flex-col lg:gap-2 lg:mt-2 mt-1">
               {module_nav_div}
             </div>
           </div>
           <div className="py-1">
-            <div className="text-xl lg:text-4xl underline underline-offset-4 lg:underline-offset-8">Additional</div>
+            <div className="text-xl lg:text-4xl underline underline-offset-4 lg:underline-offset-8">
+              Additional
+            </div>
           </div>
         </div>
         <div className="flex-1 h-screen">
