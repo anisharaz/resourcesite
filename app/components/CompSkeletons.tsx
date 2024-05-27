@@ -26,3 +26,24 @@ export function BranchCardSkeletons() {
     </>
   );
 }
+
+export function TileSkeletons() {
+  return (
+    <div className="flex flex-col space-y-3 items-center">
+      <Skeleton className="h-[150px] w-[100%] rounded-xl">
+        <div className="flex flex-col gap-4 h-full justify-center p-2">
+          <Skeleton className="h-5 max-w-[300px] dark:bg-blue-200 " />
+          Loading...
+          <Skeleton className="h-5 max-w-[250px] dark:bg-red-200 " />
+        </div>
+      </Skeleton>
+      <Skeleton className="h-[150px] w-[100%] rounded-xl">
+        <div className="flex flex-col gap-4 h-full justify-center p-2">
+          <Skeleton className="h-5 max-w-[300px] dark:bg-blue-200 " />
+          Loading...
+          <Skeleton className="h-5 max-w-[250px] dark:bg-red-200 " />
+        </div>
+      </Skeleton>
+    </div>
+  );
+}
