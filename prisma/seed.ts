@@ -124,6 +124,14 @@ async function main() {
         module_link:
           "https://dalrhzyq3imlu.cloudfront.net/resourcesite/22CSE249/22CSE249_4.pdf",
       },
+      {
+        subject_code: "22CSE249",
+        module_name: "",
+        module_description: "",
+        module_number: 5,
+        module_link:
+          "https://dalrhzyq3imlu.cloudfront.net/resourcesite/22CSE249/22CSE249_5.pdf",
+      },
     ],
   });
   const modules_dcn = await prisma.modules.createMany({
@@ -160,6 +168,14 @@ async function main() {
         module_number: 4,
         module_link:
           "https://dalrhzyq3imlu.cloudfront.net/resourcesite/22CSE107/22CSE107_4.pdf",
+      },
+      {
+        subject_code: "22CSE107",
+        module_name: "",
+        module_description: "",
+        module_number: 5,
+        module_link:
+          "https://dalrhzyq3imlu.cloudfront.net/resourcesite/22CSE107/22CSE107_5.pdf",
       },
     ],
   });
@@ -198,6 +214,14 @@ async function main() {
         module_link:
           "https://dalrhzyq3imlu.cloudfront.net/resourcesite/22AECCE11/22AECCE11_4.pdf",
       },
+      {
+        subject_code: "22AECCE11",
+        module_name: "",
+        module_description: "",
+        module_number: 5,
+        module_link:
+          "https://dalrhzyq3imlu.cloudfront.net/resourcesite/22AECCE11/22AECCE11_5.pdf",
+      },
     ],
   });
   const module_toc = await prisma.modules.createMany({
@@ -232,6 +256,14 @@ async function main() {
         module_name: "Push Down Automata",
         module_description: "pda and graphical notation,cfg to pda etc.",
         module_number: 4,
+        module_link:
+          "https://dalrhzyq3imlu.cloudfront.net/resourcesite/22CSE330/22CSE330_3.pdf",
+      },
+      {
+        subject_code: "22CSE330",
+        module_name: "",
+        module_description: "",
+        module_number: 5,
         module_link:
           "https://dalrhzyq3imlu.cloudfront.net/resourcesite/22CSE330/22CSE330_4.pdf",
       },
@@ -273,6 +305,14 @@ async function main() {
         module_number: 4,
         module_link:
           "https://dalrhzyq3imlu.cloudfront.net/resourcesite/ETP/ETP_4.pdf",
+      },
+      {
+        subject_code: "ETP",
+        module_name: "",
+        module_description: "",
+        module_number: 5,
+        module_link:
+          "https://dalrhzyq3imlu.cloudfront.net/resourcesite/ETP/ETP_5.pdf",
       },
     ],
   });
