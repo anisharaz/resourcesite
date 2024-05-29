@@ -30,7 +30,7 @@ export function SingleCard(props: {
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <Button asChild variant={"secondary"}>
+          <Button asChild>
             <a href={props.path}>View notes</a>
           </Button>
         </CardFooter>
