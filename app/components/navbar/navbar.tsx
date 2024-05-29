@@ -1,10 +1,10 @@
 import * as React from "react";
-
 import { Button } from "@/components/ui/button";
 import logo from "./assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "./mobileNav/MobileNav";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar = function () {
   return (
@@ -15,7 +15,6 @@ const Navbar = function () {
           <div className="text-orange-300 text-xl">RaidRead</div>
         </div>
       </Link>
-
       <div className="hidden md:flex md:gap-2 justify-center items-center">
         <Button size={"nav"} variant="link">
           <Link href={"/"} className="text-white">
@@ -27,7 +26,7 @@ const Navbar = function () {
             Admin
           </Link>
         </Button>
-        <Button size={"nav"} variant="default">
+        <Button size={"nav"}>
           <Link
             href={"https://github.com/anisharaz/resourcesite.git"}
             target="_blank"
@@ -35,6 +34,7 @@ const Navbar = function () {
             Github
           </Link>
         </Button>
+        <ThemeToggle />
       </div>
       <div className="md:hidden">
         <MobileNav />
