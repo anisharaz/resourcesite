@@ -1,4 +1,4 @@
-export default function Admin_dashboard({
+export default function Admin_dashboard_layout({
   children, // will be a page or nested layout
 }: {
   children: React.ReactNode;
