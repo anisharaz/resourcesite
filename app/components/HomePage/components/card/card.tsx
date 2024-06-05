@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 
 export function SingleCard(props: {
-  image: any;
+  image: string;
   courseName: string;
   note: string;
   path: string;
