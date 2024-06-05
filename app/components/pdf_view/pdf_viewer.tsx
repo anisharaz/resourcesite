@@ -10,7 +10,7 @@ const PdfViewer = ({ url }: { url: string }) => {
       <Worker workerUrl="/worker.js">
         <Viewer fileUrl={url} plugins={[defaultLayoutPluginInstance]} />
       </Worker>
-      </div>
+    </div>
   );
 };
 export default PdfViewer;

@@ -15,7 +15,7 @@ function Navigator() {
   const params = useParams();
   const path = usePathname();
   const patharray = path.split("/").filter((x) => x != "" && x != "view");
-  const popped = patharray.pop();
+  patharray.pop();
   const crum_element = Object.keys(params)
     .slice(1)
     .map((key, index) => {

@@ -11,10 +11,11 @@ function Module_nav({ url, name }: { url: string; name: string }) {
   return (
     <>
       <div
-        className={`relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${isActive
-          ? "text-green-400 after:scale-x-100 after:bg-green-400"
-          : "hover:text-sky-400 after:bg-sky-400 "
-          }`}
+        className={`relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
+          isActive
+            ? "text-green-400 after:scale-x-100 after:bg-green-400"
+            : "hover:text-sky-400 after:bg-sky-400 "
+        }`}
       >
         <button
           className="flex items-center"
