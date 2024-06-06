@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 
 export function SingleCard(props: {
-  image: any;
+  image: StaticImageData;
   courseName: string;
   note: string;
   path: string;

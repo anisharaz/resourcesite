@@ -15,7 +15,7 @@ function Module_nav({ url, name }: { url: string; name: string }) {
           ? "text-green-700 after:scale-x-100 after:bg-green-700"
           : "hover:text-blue-700 after:bg-blue-700 "
           }`}
-      >
+       >
         <button
           className="flex items-center"
           onClick={() => {
