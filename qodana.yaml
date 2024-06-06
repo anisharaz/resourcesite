@@ -2,12 +2,3 @@ version: "1.0"
 profile:
   name: qodana.recommended
 linter: jetbrains/qodana-js:latest
-include:
-  - name: ES6TopLevelAwaitExpression
-  - name: Eslint
-  - name: StandardJS
-  - name: JSRemoveUnnecessaryParentheses
-  - name: IfStatementWithIdenticalBranchesJS
-  - name: CssUnusedSymbol
-  - name: HttpUrlsUsage
-  - name: YAMLDuplicatedKeys
