@@ -6,8 +6,8 @@ import downArrow from "../assets/downArrow.svg";
 
 async function HomeContent() {
   return (
-    <div className="bg-lsec dark:bg-dpri pb-6 "> 
-    {/* 'HomeContent' inside className bg-lsec dark:bg-dpri*/}
+    <div className="bg-lsec dark:bg-dpri pb-6 ">
+      {/* 'HomeContent' inside className bg-lsec dark:bg-dpri*/}
       <div className="flex justify-center py-3 pt-5">
         <Image
           className="bg-white rounded-full animate-bounce"
