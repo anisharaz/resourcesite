@@ -1,5 +1,3 @@
-import Image from "next/image";
-import bgImage from "../assets/bgImage.svg";
 export default async function Hero() {
   return (
     <div className="relative h-screen bg-lback text-ltext dark:bg-dback dark:text-dtext">
