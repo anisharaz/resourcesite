@@ -10,7 +10,7 @@ async function Semesters({ params }: { params: { branch: string } }) {
       <Link
         href={`/view/${params.branch}/${sem}`}
         key={v4()}
-        className="block backdrop-blur-sm bg-white/20 max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-white/10 dark:bg-white/10 dark:border-gray-700 dark:hover:bg-white/5 dark:hover:border-sky-800"
+        className="block backdrop-blur-sm max-w-sm p-6 rounded-lg shadow border bg-lsec text-ltext hover:bg-[#B4B2D5] dark:bg-dpri dark:hover:bg-[#443DC1]"
       >
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {"SEMESTER " + sem}
@@ -33,12 +33,12 @@ async function Semesters({ params }: { params: { branch: string } }) {
   return (
     <>
       <div
-        className="bg-pri"
+        className="text-ltext dark:text-dtext dark:bg-dback"
         style={{
           minHeight: "calc(100vh - 52px)",
         }}
       >
-        <div className="text-center text-white text-2xl py-3 ">
+        <div className="text-center text-2xl py-3 ">
           Branch :{params.branch}
         </div>
         <div className="grid lg:grid-cols-3 lg:grid-rows-3 md:grid-cols-2 gap-2 p-2">

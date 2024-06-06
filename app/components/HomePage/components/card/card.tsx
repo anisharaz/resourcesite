@@ -16,7 +16,7 @@ export function SingleCard(props: {
 }) {
   return (
     <div className="flex justify-center">
-      <Card style={{ background: "#E7E7E7" }} className="w-5/6">
+      <Card className="w-5/6">
         <CardHeader className="p-0">
           <Image
             src={props.image}
@@ -25,7 +25,7 @@ export function SingleCard(props: {
           />
         </CardHeader>
         <CardContent>
-          <p className="text-center text-[#000000] font-bold pt-3 text-2xl">
+          <p className="text-center text-ltext dark:text-dtext font-bold pt-3 text-2xl">
             {props.courseName}
           </p>
         </CardContent>

@@ -57,7 +57,7 @@ function Navigator() {
           <BreadcrumbSeparator />
           {crum_element}
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-white">Current Page</BreadcrumbPage>
+            <BreadcrumbPage className="text-ltext">Current Page</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
