@@ -8,7 +8,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar = function () {
   return (
-    <div className="flex justify-between bg-sec p-2 items-center sticky top-0 z-50">
+    <div className="flex justify-between bg-lsec text-ltext dark:bg-dpri dark:text-dtext p-2 items-center sticky top-0 z-50">
       <Link href={"/"}>
         <div className="flex content-center items-center p-1 gap-1 bg-[#262EF3] rounded-xl px-2">
           <Image src={logo} alt="" className="logo h-7 w-auto rounded-full" />
@@ -17,12 +17,12 @@ const Navbar = function () {
       </Link>
       <div className="hidden md:flex md:gap-2 justify-center items-center">
         <Button size={"nav"} variant="link">
-          <Link href={"/"} className="text-white">
+          <Link href={"/"} className="">
             Home
           </Link>
         </Button>
         <Button size={"nav"} variant="link">
-          <Link href={"/admin"} className="text-white">
+          <Link href={"/admin"} className="">
             Admin
           </Link>
         </Button>

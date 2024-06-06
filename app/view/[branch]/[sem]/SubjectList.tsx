@@ -9,12 +9,12 @@ async function SubjectList({ branch, sem }: { branch: string; sem: number }) {
       <Link
         href={`/view/CSE/4/${subject.subject_code}`}
         key={v4()}
-        className="block backdrop-blur-sm bg-white/20 max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-white/10 dark:bg-white/10 dark:border-gray-700 dark:hover:bg-white/5 dark:hover:border-sky-800"
+        className="block backdrop-blur-sm bg-lsec text-ltext max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-[#B4B2D5] dark:bg-dpri dark:text-dtext dark:hover:bg-[#443DC1]"
       >
-        <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="mb-2 text-xl font-bold tracking-tight">
           {subject.subject_name + " (" + subject.subject_short_name + ")"}
         </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
+        <p className="font-normal text-gray-700 dark:text-gray-300">
           Subject Code:
           {subject.subject_code}
         </p>

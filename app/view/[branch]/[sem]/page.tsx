@@ -10,12 +10,12 @@ async function Subjects({
   return (
     <>
       <div
-        className="bg-pri p-2"
+        className="bg-lback dark:bg-dback p-2"
         style={{
           minHeight: "calc(100vh - 52px)",
         }}
       >
-        <div className="text-center text-white text-2xl">
+        <div className="text-center text-ltext dark:text-dtext text-2xl">
           Sem : {params.sem}
         </div>
         <br />

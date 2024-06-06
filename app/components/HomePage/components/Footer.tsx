@@ -4,7 +4,7 @@ import thinley from "../assets/thinley.jpeg";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-gray-900 text-gray-400 py-8">
+      <footer className="bg-lback text-ltext dark:bg-dback dark:text-dtext py-8">
         <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-4">
           <div className="flex flex-col items-center space-y-4">
             <div className="flex items-center space-x-4">
@@ -23,7 +23,7 @@ export default function Footer() {
                 <div className="text-sm font-medium mt-2">Anish Araz</div>
                 <div className="flex items-center space-x-2 mt-2">
                   <a
-                    className="hover:text-gray-200"
+                    className="hover:text-lacc"
                     href="https://twitter.com/AnishAraz"
                     target="_blank"
                   >
@@ -43,7 +43,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    className="hover:text-gray-200"
+                    className="hover:text-lacc"
                     href="https://www.linkedin.com/in/anisharaz/"
                     target="_blank"
                   >
@@ -65,7 +65,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    className="hover:text-gray-200"
+                    className="hover:text-lacc"
                     href="https://github.com/anisharaz"
                     target="_blank"
                   >
@@ -104,7 +104,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-2 mt-2">
                   <a
-                    className="hover:text-gray-200"
+                    className="hover:text-lacc"
                     href="https://www.linkedin.com/in/thinley-lama-842631252/"
                     target="_blank"
                   >
@@ -126,7 +126,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    className="hover:text-gray-200"
+                    className="hover:text-lacc"
                     href="https://github.com/thinley4"
                     target="_blank"
                   >
