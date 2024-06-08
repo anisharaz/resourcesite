@@ -25,7 +25,7 @@ export function SingleCard(props: {
           />
         </CardHeader>
         <CardContent>
-          <p className="text-center text-ltext dark:text-dtext font-bold pt-3 text-2xl">
+          <p className="text-center text-dtext font-bold pt-3 text-2xl">
             {props.courseName}
           </p>
         </CardContent>
@@ -37,7 +37,9 @@ export function SingleCard(props: {
         <div className="flex justify-center text-[#ff0000]">
           <p
             className={
-              props.note === "available" ? "text-emerald-600 font-bold" : ""
+              props.note === "available"
+                ? "text-lacc dark:text-dacc font-bold"
+                : ""
             }
           >
             {props.note}

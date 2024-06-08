@@ -9,15 +9,13 @@ async function getUser(email: string): Promise<{
   password: string;
 } | null> {
   try {
-    const user = await prisma.users.findUnique({
+    return await prisma.users.findUnique({
       where: { email: email },
       select: {
         email: true,
         password: true,
       },
     });
-
-    return user;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error("Failed to fetch user:", error);
