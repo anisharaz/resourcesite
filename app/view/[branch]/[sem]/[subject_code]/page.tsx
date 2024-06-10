@@ -10,7 +10,7 @@ async function Modules({
   return (
     <>
       <div
-        className="bg-lback dark:bg-dback p-2"
+        className="bg-lpri dark:bg-dpri p-2"
         style={{
           minHeight: "calc(100vh - 52px)",
         }}

@@ -28,7 +28,7 @@ async function Mod_view({
   return (
     <>
       <div className="lg:flex font-serif">
-        <div className="lg:p-2 lg:h-screen bg-[#e0e0e0] text-ltext dark:bg-dback dark:text-dtext lg:px-4 flex flex-col">
+        <div className="lg:p-2 lg:h-screen bg-white text-black dark:bg-black dark:text-white lg:px-4 flex flex-col">
           <div>
             <div className="text-xl lg:text-4xl underline underline-offset-4 lg:underline-offset-8 lg:py-4 ">
               Modules List

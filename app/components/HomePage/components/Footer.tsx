@@ -4,7 +4,7 @@ import thinley from "../assets/thinley.jpeg";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-lpri text-dtext py-8">
+      <footer className="bg-lpri dark:bg-dpri text-textc py-8">
         <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-4">
           <div className="flex flex-col items-center space-y-4">
             <div className="flex items-center space-x-4">
