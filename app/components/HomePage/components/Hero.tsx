@@ -1,3 +1,5 @@
+import Image from "next/image";
+import bgImage from "../assets/bgImage.svg";
 export default async function Hero() {
   return (
     <div className="relative text-white max-h-screen">
