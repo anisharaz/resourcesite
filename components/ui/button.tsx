@@ -22,6 +22,8 @@ const buttonVariants = cva(
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
         moduleNav:
           "text-black underline-offset-4 hover:underline dark:text-black",
+        my_default:
+          "bg-lacc text-neutral-50 hover:bg-lacc/70 dark:bg-dacc dark:text-neutral-900 dark:hover:bg-dacc/80",
       },
       size: {
         default: "h-10 px-4 py-2",

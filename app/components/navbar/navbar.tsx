@@ -26,7 +26,7 @@ const Navbar = function () {
             Admin
           </Link>
         </Button>
-        <Button size={"nav"}>
+        <Button size={"nav"} variant={"my_default"}>
           <Link
             href={"https://github.com/anisharaz/resourcesite.git"}
             target="_blank"
