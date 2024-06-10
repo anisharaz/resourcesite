@@ -1,4 +1,4 @@
-import "./landing.scss";
+import "./HomePage.scss";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import HomeContent from "./components/HomeContent";

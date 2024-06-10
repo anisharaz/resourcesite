@@ -9,7 +9,7 @@ async function SubjectList({ branch, sem }: { branch: string; sem: number }) {
       <Link
         href={`/view/CSE/4/${subject.subject_code}`}
         key={v4()}
-        className="block backdrop-blur-sm bg-lsec text-ltext max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-[#B4B2D5] dark:bg-dpri dark:text-dtext dark:hover:bg-[#443DC1]"
+        className="block max-w-sm p-6 rounded-lg shadow bg-lpri/30 text-ltext dark:text-dtext dark:bg-dsec/80 border-black dark:border-white hover:border"
       >
         <h5 className="mb-2 text-xl font-bold tracking-tight">
           {subject.subject_name + " (" + subject.subject_short_name + ")"}
@@ -21,7 +21,7 @@ async function SubjectList({ branch, sem }: { branch: string; sem: number }) {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          fill="currentColor"
+          fill="#00C25A"
           className="w-6 h-6"
         >
           <path

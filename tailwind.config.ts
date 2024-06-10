@@ -18,16 +18,16 @@ const config: Config = {
     },
     extend: {
       colors: {
-        ltext: "#0F0A30",
+        ltext: "#000000",
         lback: "#FFFFFF",
-        lpri: "#2f27ce",
-        lsec: "#a19ed2",
-        lacc: "#403d94",
+        lpri: "#0E52B2",
+        lsec: "#003471",
+        lacc: "#55B83C",
         dtext: "#ffffff",
-        dback: "#020426",
-        dpri: "#3730bd",
-        dsec: "#221d74",
-        dacc: "#47459d",
+        dback: "#07070F",
+        dpri: "#0E52B2",
+        dsec: "#003471",
+        dacc: "#00C25A",
       },
       keyframes: {
         "accordion-down": {
