@@ -10,16 +10,16 @@ async function Subjects({
   return (
     <>
       <div
-        className="bg-lback dark:bg-dback p-2"
+        className="text-textc bg-lpri dark:bg-dpri p-2"
         style={{
           minHeight: "calc(100vh - 52px)",
         }}
       >
-        <div className="text-center text-ltext dark:text-dtext text-2xl">
+        <div className="text-center text-textc dark:text-textc text-2xl">
           Sem : {params.sem}
         </div>
         <br />
-        <div className=" grid lg:grid-cols-3 lg:grid-rows-3 md:grid-cols-2 gap-2">
+        <div className="grid lg:grid-cols-3 lg:grid-rows-3 md:grid-cols-2 gap-2">
           <Suspense fallback={<TileSkeletons />}>
             <SubjectList branch={params.branch} sem={parseInt(params.sem)} />
           </Suspense>

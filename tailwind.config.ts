@@ -18,12 +18,11 @@ const config: Config = {
     },
     extend: {
       colors: {
-        ltext: "#000000",
+        textc: "#ffffff",
         lback: "#FFFFFF",
-        lpri: "#0E52B2",
-        lsec: "#003471",
+        lpri: "#3C7AD2",
+        lsec: "#235C9F",
         lacc: "#55B83C",
-        dtext: "#ffffff",
         dback: "#07070F",
         dpri: "#0E52B2",
         dsec: "#003471",

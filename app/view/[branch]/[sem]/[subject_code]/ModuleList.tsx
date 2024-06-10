@@ -18,12 +18,12 @@ async function ModuleList({
       <Link
         href={`/view/${branch}/${sem}/${subject_code}/${module.id}`}
         key={v4()}
-        className="block max-w-sm p-6 rounded-lg shadow bg-lpri/30 text-ltext dark:text-dtext dark:bg-dsec/80 border-black dark:border-white hover:border"
+        className="block max-w-sm p-6 rounded-lg shadow bg-lsec text-textc dark:text-textc dark:bg-dsec/80 border-white hover:border"
       >
-        <h5 className="mb-2 text-xl font-bold tracking-tight text-ltext dark:text-dtext">
+        <h5 className="mb-2 text-xl font-bold tracking-tight text-textc dark:text-textc">
           {"Module " + module.module_number}
         </h5>
-        <p className="font-normal text-ltext dark:text-dtext">
+        <p className="font-normal text-textc dark:text-textc">
           {"Name: " + module.module_name}
           <br />
           {"Description: " + module.module_description}
@@ -32,7 +32,7 @@ async function ModuleList({
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="#00C25A"
-          className="w-6 h-6 text-ltext dark:text-dtext"
+          className="w-6 h-6 text-textc dark:text-textc"
         >
           <path
             fillRule="evenodd"
@@ -45,7 +45,7 @@ async function ModuleList({
   });
   return (
     <>
-      <div className="text-center text-ltext dark:text-dtext text-2xl pb-4">
+      <div className="text-center text-textc dark:text-textc text-2xl pb-4">
         Subject : {data?.subject_name}
       </div>
       <div className=" grid lg:grid-cols-3 lg:grid-rows-3 md:grid-cols-2 gap-2">
