@@ -18,7 +18,7 @@ async function ModuleList({
       <Link
         href={`/view/${branch}/${sem}/${subject_code}/${module.id}`}
         key={v4()}
-        className="block backdrop-blur-sm max-w-sm p-6 border border-gray-200 rounded-lg shadow bg-lsec text-ltext hover:bg-[#B4B2D5] dark:bg-dpri dark:hover:bg-[#443DC1]"
+        className="block max-w-sm p-6 rounded-lg shadow bg-lpri/30 text-ltext dark:text-dtext dark:bg-dsec/80 border-black dark:border-white hover:border"
       >
         <h5 className="mb-2 text-xl font-bold tracking-tight text-ltext dark:text-dtext">
           {"Module " + module.module_number}
@@ -31,7 +31,7 @@ async function ModuleList({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          fill="currentColor"
+          fill="#00C25A"
           className="w-6 h-6 text-ltext dark:text-dtext"
         >
           <path

@@ -2,7 +2,8 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 async function main() {
-  const sems = await prisma.semesters.createMany({
+  // Semesters
+  await prisma.semesters.createMany({
     data: [
       {
         sem_number: 1,
@@ -30,7 +31,9 @@ async function main() {
       },
     ],
   });
-  const branches = await prisma.branches.createMany({
+
+  // Branches
+  await prisma.branches.createMany({
     data: [
       {
         branch_name: "Computer Science and Engineering",
@@ -52,7 +55,9 @@ async function main() {
       },
     ],
   });
-  const cse_sem_4 = await prisma.subjects.createMany({
+
+  // cse_sem_4
+  await prisma.subjects.createMany({
     data: [
       {
         branch_code: "CSE",
@@ -91,7 +96,9 @@ async function main() {
       },
     ],
   });
-  const modules_daa = await prisma.modules.createMany({
+
+  // modules_daa
+  await prisma.modules.createMany({
     data: [
       {
         subject_code: "22CSE249",
@@ -135,7 +142,9 @@ async function main() {
       },
     ],
   });
-  const modules_dcn = await prisma.modules.createMany({
+
+  // modules_dcn
+  await prisma.modules.createMany({
     data: [
       {
         subject_code: "22CSE107",
@@ -180,7 +189,9 @@ async function main() {
       },
     ],
   });
-  const module_es = await prisma.modules.createMany({
+
+  // module_es
+  await prisma.modules.createMany({
     data: [
       {
         subject_code: "22AECCE11",
@@ -225,7 +236,9 @@ async function main() {
       },
     ],
   });
-  const module_toc = await prisma.modules.createMany({
+
+  // module_toc
+  await prisma.modules.createMany({
     data: [
       {
         subject_code: "22CSE330",
@@ -270,7 +283,9 @@ async function main() {
       },
     ],
   });
-  const module_etp = await prisma.modules.createMany({
+
+  // module_etp
+  await prisma.modules.createMany({
     data: [
       {
         subject_code: "ETP",
