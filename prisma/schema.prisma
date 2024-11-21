@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model branches {
+model course {
   id             Int        @id @default(autoincrement())
   branch_name    String     @unique
   branch_code    String     @unique
@@ -30,8 +30,8 @@ model semesters {
 
 model subjects {
   id                 Int       @id @default(autoincrement())
-  branche            branches  @relation(fields: [branch_code], references: [branch_code])
-  branch_code        String
+  course             course    @relation(fields: [course_code], references: [branch_code])
+  course_code        String
   semester           semesters @relation(fields: [semesters_num], references: [sem_number])
   semesters_num      Int
   subject_code       String    @unique
@@ -41,30 +41,25 @@ model subjects {
 }
 
 model modules {
-  id                 Int             @id @default(autoincrement())
-  subjects           subjects        @relation(fields: [subject_code], references: [subject_code])
+  id                 Int      @id @default(autoincrement())
+  subjects           subjects @relation(fields: [subject_code], references: [subject_code])
   subject_code       String
+  module_no          Int
   module_name        String
-  module_number      Int
   module_description String
-  module_link        String
-  module_addons      module_addons[]
-}
-
-model module_addons {
-  id         Int     @id @default(autoincrement())
-  modules    modules @relation(fields: [modulesId], references: [id])
-  modulesId  Int
-  addon_name String
-  addon_link String
-  addon_type String
+  module_url         Json // type of module_data is at /app/lib/types.ts
 }
 
 model users {
-  id        Int    @id @default(autoincrement())
-  email     String @unique
-  password  String
-  name      String
-  role      String
-  privilage String
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+  role     Role
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+  ADMIN
 }
