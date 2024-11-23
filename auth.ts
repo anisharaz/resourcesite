@@ -1,49 +1,18 @@
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
-import { authConfig } from "./auth.config";
-import Credentials from "next-auth/providers/credentials";
-import { z } from "zod";
-import prisma from "./app/lib/db";
+import { PrismaClient } from "@prisma/client";
+import authConfig from "./auth.config";
 
-async function getUser(email: string): Promise<{
-  email: string;
-  password: string;
-} | null> {
-  try {
-    return await prisma.users.findUnique({
-      where: { email: email },
-      select: {
-        email: true,
-        password: true,
-      },
-    });
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error("Failed to fetch user:", error);
-    throw new Error("Failed to fetch user.");
-  }
-}
+const prisma = new PrismaClient();
 
-export const { auth, signIn, signOut } = NextAuth({
+export const { handlers, signIn, signOut, auth } = NextAuth({
+  adapter: PrismaAdapter(prisma),
+  session: { strategy: "jwt", maxAge: 7 * 24 * 60 * 60 },
   ...authConfig,
-  providers: [
-    Credentials({
-      async authorize(credentials) {
-        const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string() })
-          .safeParse(credentials);
-
-        if (parsedCredentials.success) {
-          const { email, password } = parsedCredentials.data;
-          const user = await getUser(email);
-          if (!user) return null;
-          // const passwordsMatch = await bcrypt.compare(password, user.password);
-          const passwordsMatch = password == user.password;
-          if (passwordsMatch) return user;
-        }
-        // eslint-disable-next-line no-console
-        console.log("Invalid credentials");
-        return null;
-      },
-    }),
-  ],
+  // callbacks: {
+  //   // this function determines if the user is allowed to signing or not, it runs before the user is created in the database
+  //   async signIn({ user, account, profile, email, credentials }) {
+  //     return true;
+  //   },
+  // },
 });

@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/navbar/navbar";
 import { ThemeProvider } from "./context/Them-Provider";
-const RobotoFont = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "400"],
-});
+import Navbar from "@/components/ui/navbar";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://notes.aaraz.me"),
   title: "Download Free College Reading Resources",
@@ -19,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={RobotoFont.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
