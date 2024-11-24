@@ -115,15 +115,6 @@ model branch {
   department_code String
   available_sems  Json // array of semester number whose notes are available if it is [0] then there are no notes available
   subjects        subjects[]
-  section         section[]
-}
-
-model section {
-  id           Int    @id @unique
-  section_name String @unique     // section names - [CSE GEN A, AIML A, IOT B]
-  branch       branch @relation(fields: [branch_name], references: [branch_name])
-  branch_name  String
-  modules modules[]
 }
 
 model subjects {
@@ -147,8 +138,6 @@ model semesters {
 model modules {
   id                 Int      @id @default(autoincrement())
   subjects           subjects @relation(fields: [subject_code], references: [subject_code])
-  section            section  @relation(fields: [section_name], references: [section_name])
-  section_name       String
   subject_code       String
   module_no          Int
   module_name        String
