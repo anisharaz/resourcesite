@@ -5,8 +5,8 @@ import Link from "next/link";
 import { IoMdFolderOpen } from "react-icons/io";
 
 async function ModuleList({
-  // branch,
-  // sem,
+  branch,
+  sem,
   subject_code,
 }: {
   branch: string;
@@ -14,9 +14,7 @@ async function ModuleList({
   subject_code: string;
 }) {
   const data = await get_SubWithModules(subject_code);
-  // console.log(data);
   const modules_array = data?.module;
-  // console.log(modules_array);
 
   const groupedModules = modules_array?.map((module) => ({
     moduleNo: module.module_no,
@@ -37,7 +35,7 @@ async function ModuleList({
           return (
             <Link
               key={index}
-              href={subModule.url}
+              href={`/view/${branch}/${sem}/${subject_code}/${module.moduleNo}_${subModule.doc_no}`}
               className="bg-[#031730] w-32 px-3 pb-2 rounded-lg"
             >
               <div className="mt-4">
