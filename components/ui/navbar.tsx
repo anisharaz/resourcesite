@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/drawer";
 const Navbar = function () {
   return (
-    <div className="flex justify-between bg-lback/80 dark:bg-dback/80 lg:p-2 p-1 items-center sticky top-0 z-50">
+    <div className="flex justify-between bg-lback/80 dark:bg-dback/80 lg:p-2 p-1 items-center sticky top-0 z-50 h-16">
       <Link href={"/"}>
         <div className="flex content-center items-center p-1 gap-1 rounded-xl px-2">
           <Image src={logo} alt="" className="logo h-7 w-auto rounded-full" />

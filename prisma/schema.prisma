@@ -22,10 +22,16 @@ model User {
   role          Role            @default(STUDENT)
   accounts      Account[]
   sessions      Session[]
-  // Optional for WebAuthn support
   Authenticator Authenticator[]
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
+  // ################## User Belonging data START ##################
+  program       program[]
+  department    department[]
+  branch        branch[]
+  semesters     semesters[]
+  section       section[]
+  // ################## User Belonging data END ##################
 }
 
 enum Role {
@@ -93,22 +99,26 @@ model Authenticator {
 // ############################ AUTH END ##################################
 
 model program {
-  id           Int          @id @default(autoincrement())
+  id           String       @id @default(cuid())
   program_name String       @unique
   departments  department[]
+  User         User?        @relation(fields: [userId], references: [id])
+  userId       String?
 }
 
 model department {
-  id              Int      @id @default(autoincrement())
+  id              String   @id @default(cuid())
   department_name String   @unique
   department_code String   @unique
   program         program  @relation(fields: [program_name], references: [program_name])
   program_name    String
   branches        branch[]
+  User            User?    @relation(fields: [userId], references: [id])
+  userId          String?
 }
 
 model branch {
-  id              Int        @id @default(autoincrement())
+  id              String     @id @default(cuid())
   branch_name     String     @unique
   branch_code     String     @unique
   department      department @relation(fields: [department_code], references: [department_code])
@@ -116,14 +126,20 @@ model branch {
   available_sems  Json // array of semester number whose notes are available if it is [0] then there are no notes available
   subjects        subjects[]
   section         section[]
+  User            User?      @relation(fields: [userId], references: [id])
+  userId          String?
 }
 
 model section {
-  id           Int    @id @unique
-  section_name String @unique     // section names - [CSE GEN A, AIML A, IOT B]
-  branch       branch @relation(fields: [branch_name], references: [branch_name])
-  branch_name  String
-  modules modules[]
+  id           String     @id @default(cuid())
+  section_name String     @unique // section names - [CSE GEN A, AIML A, IOT B]
+  branch       branch     @relation(fields: [branch_code], references: [branch_code])
+  branch_code  String
+  modules      modules[]
+  User         User?      @relation(fields: [userId], references: [id])
+  userId       String?
+  semesters    semesters? @relation(fields: [semestersId], references: [id])
+  semestersId  Int?
 }
 
 model subjects {
@@ -142,6 +158,9 @@ model semesters {
   id         Int        @id @default(autoincrement())
   sem_number Int        @unique
   subjects   subjects[]
+  User       User?      @relation(fields: [userId], references: [id])
+  userId     String?
+  section    section[]
 }
 
 model modules {

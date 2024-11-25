@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "./context/Them-Provider";
 import Navbar from "@/components/ui/navbar";
+import ContextProvider from "./context/ContextProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://notes.aaraz.me"),
@@ -17,15 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ContextProvider>
           <Navbar />
           {children}
-        </ThemeProvider>
+        </ContextProvider>
       </body>
     </html>
   );
