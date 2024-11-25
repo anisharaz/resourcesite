@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -20,21 +14,13 @@ model User {
   emailVerified DateTime?
   image         String?
   role          Role            @default(STUDENT)
-  accounts      Account[]
-  sessions      Session[]
-  // Optional for WebAuthn support
-  Authenticator Authenticator[]
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
+  accounts      Account[]
+  Authenticator Authenticator[]
+  sessions      Session[]
 }
 
-enum Role {
-  STUDENT
-  TEACHER
-  ADMIN
-}
-
-// ############################ AUTH START ###############################
 model Account {
   userId            String
   type              String
@@ -47,11 +33,9 @@ model Account {
   scope             String?
   id_token          String?
   session_state     String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([provider, providerAccountId])
 }
@@ -60,10 +44,9 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 model VerificationToken {
@@ -74,7 +57,6 @@ model VerificationToken {
   @@id([identifier, token])
 }
 
-// Optional for WebAuthn support
 model Authenticator {
   credentialID         String  @unique
   userId               String
@@ -84,13 +66,10 @@ model Authenticator {
   credentialDeviceType String
   credentialBackedUp   Boolean
   transports           String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user                 User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([userId, credentialID])
 }
-
-// ############################ AUTH END ##################################
 
 model program {
   id           Int          @id @default(autoincrement())
@@ -102,40 +81,40 @@ model department {
   id              Int      @id @default(autoincrement())
   department_name String   @unique
   department_code String   @unique
-  program         program  @relation(fields: [program_name], references: [program_name])
   program_name    String
   branches        branch[]
+  program         program  @relation(fields: [program_name], references: [program_name])
 }
 
 model branch {
   id              Int        @id @default(autoincrement())
   branch_name     String     @unique
   branch_code     String     @unique
-  department      department @relation(fields: [department_code], references: [department_code])
   department_code String
-  available_sems  Json // array of semester number whose notes are available if it is [0] then there are no notes available
-  subjects        subjects[]
+  available_sems  Json
+  department      department @relation(fields: [department_code], references: [department_code])
   section         section[]
+  subjects        subjects[]
 }
 
 model section {
-  id           Int    @id @unique
-  section_name String @unique     // section names - [CSE GEN A, AIML A, IOT B]
-  branch       branch @relation(fields: [branch_name], references: [branch_name])
+  id           Int       @id @default(autoincrement())
+  section_name String    @unique
   branch_name  String
-  modules modules[]
+  modules      modules[]
+  branch       branch    @relation(fields: [branch_name], references: [branch_name])
 }
 
 model subjects {
   id                 Int       @id @default(autoincrement())
-  branch             branch    @relation(fields: [branch_code], references: [branch_code])
   branch_code        String
-  semester           semesters @relation(fields: [semesters_num], references: [sem_number])
   semesters_num      Int
   subject_code       String    @unique
   subject_name       String
   subject_short_name String
   module             modules[]
+  branch             branch    @relation(fields: [branch_code], references: [branch_code])
+  semester           semesters @relation(fields: [semesters_num], references: [sem_number])
 }
 
 model semesters {
@@ -146,12 +125,18 @@ model semesters {
 
 model modules {
   id                 Int      @id @default(autoincrement())
-  subjects           subjects @relation(fields: [subject_code], references: [subject_code])
-  section            section  @relation(fields: [section_name], references: [section_name])
-  section_name       String
   subject_code       String
   module_no          Int
   module_name        String
   module_description String
-  module_url         Json // type of module_data is at /app/lib/types.ts
+  module_url         Json
+  section_name       String
+  section            section  @relation(fields: [section_name], references: [section_name])
+  subjects           subjects @relation(fields: [subject_code], references: [subject_code])
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+  ADMIN
 }

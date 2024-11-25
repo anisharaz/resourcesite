@@ -36,3 +36,11 @@ export async function get_module(module_id: number) {
     },
   });
 }
+
+export async function get_modulesWithName(module_name: string) {
+  return await prisma.modules.findUnique({
+    where: {
+      module_name: module_name,
+    },
+  });
+}

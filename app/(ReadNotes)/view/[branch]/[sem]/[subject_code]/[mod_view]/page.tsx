@@ -16,6 +16,8 @@ async function Module_view({
   const param = await params;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const data = await get_module(parseInt(param.mod_view));
+  // console.log(data?.module_url);
+
   const subject_data = await get_SubWithModules(param.subject_code);
   const modules = subject_data?.module;
   const Sidebar_div = modules?.map((mod) => {
@@ -47,7 +49,7 @@ async function Module_view({
           </div>
         </div>
         <div className="flex-1 h-screen">
-          {/* <PdfViewer url={data?.module_link as string} /> */}
+          <PdfViewer url={data?.module_url[0].url as string} />
         </div>
       </div>
     </>

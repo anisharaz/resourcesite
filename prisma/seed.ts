@@ -46,13 +46,82 @@ async function main() {
     },
   });
 
-  await prisma.branch.create({
-    data: {
-      branch_name: "Computer Science and Engineering",
-      branch_code: "CSE",
-      department_code: "CSE",
-      available_sems: [4], // [0] this means no semester doc are available
-    },
+  await prisma.branch.createMany({
+    data: [
+      {
+        branch_name: "Computer Science and Engineering",
+        branch_code: "CSE",
+        department_code: "CSE",
+        available_sems: [4], // [0] this means no semester doc are available
+      },
+      {
+        branch_name: "Information And Technology",
+        branch_code: "IOT",
+        department_code: "CSE",
+        available_sems: [4],
+      },
+      {
+        branch_name: "Artificial Intelligence and Machine Learning",
+        branch_code: "AIML",
+        department_code: "CSE",
+        available_sems: [3],
+      },
+      {
+        branch_name: "Information and Software Engineering",
+        branch_code: "ISE",
+        department_code: "CSE",
+        available_sems: [4],
+      },
+    ],
+  });
+
+  await prisma.section.createMany({
+    data: [
+      {
+        section_name: "CSE Gen A",
+        branch_name: "Computer Science and Engineering",
+      },
+      {
+        section_name: "CSE Gen B",
+        branch_name: "Computer Science and Engineering",
+      },
+      {
+        section_name: "CSE Gen C",
+        branch_name: "Computer Science and Engineering",
+      },
+      {
+        section_name: "CSE Gen D",
+        branch_name: "Computer Science and Engineering",
+      },
+      {
+        section_name: "CSE Gen E",
+        branch_name: "Computer Science and Engineering",
+      },
+      {
+        section_name: "IOT A",
+        branch_name: "Information And Technology",
+      },
+      {
+        section_name: "IOT B",
+        branch_name: "Information And Technology",
+      },
+      {
+        section_name: "AIML A",
+        branch_name: "Artificial Intelligence and Machine Learning",
+      },
+      {
+        section_name: "AIML B",
+        branch_name: "Artificial Intelligence and Machine Learning",
+      },
+      {
+        section_name: "ISE A",
+        branch_name: "Information and Software Engineering",
+      },
+      {
+        section_name: "ISE B",
+        branch_name: "Information and Software Engineering",
+      },
+    ],
   });
 
   await prisma.subjects.createMany({
@@ -90,47 +159,206 @@ async function main() {
         semesters_num: 4,
         subject_name: "Entrepreneurship",
         subject_short_name: "ETP",
-        subject_code: "ETP",
+        subject_code: "22HSS123",
+      },
+      {
+        branch_code: "IOT",
+        semesters_num: 4,
+        subject_name: "Digital Logic",
+        subject_short_name: "DLD",
+        subject_code: "22IOT223",
+      },
+      {
+        branch_code: "IOT",
+        semesters_num: 4,
+        subject_name: "Business Communication and Presentation",
+        subject_short_name: "BCP",
+        subject_code: "22IOT124",
+      },
+      {
+        branch_code: "AIML",
+        semesters_num: 4,
+        subject_name: "Essentials of Machine Learning",
+        subject_short_name: "EML",
+        subject_code: "22AIML124",
+      },
+      {
+        branch_code: "ISE",
+        semesters_num: 4,
+        subject_name: "Information Science",
+        subject_short_name: "ISC",
+        subject_code: "22ISC324",
       },
     ],
   });
 
   await prisma.modules.createMany({
-    data: {
-      subject_code: "22CSE249",
-      module_no: 1,
-      module_name: "Introduction to Algorithms",
-      module_description: "Introduction to Algorithms",
-      module_url: [
-        {
-          doc_type: "MAIN_MODULE",
-          doc_no: 1,
-          url: "https://www.youtube.com/watch?v=HtSuA80QTyo",
-        },
-      ],
-    },
+    data: [
+      {
+        subject_code: "22CSE249",
+        section_name: "CSE Gen A",
+        module_no: 1,
+        module_name: "Introduction to Algorithms",
+        module_description: "Introduction to Algorithms",
+        module_url: [
+          {
+            doc_type: "MAIN_MODULE",
+            doc_no: 1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_1.pdf",
+          },
+        ],
+      },
+      {
+        subject_code: "22CSE249",
+        section_name: "CSE Gen A",
+        module_no: 2,
+        module_name: "Introduction to Algorithms",
+        module_description: "Introduction to Algorithms",
+        module_url: [
+          {
+            doc_type: "MAIN_MODULE",
+            doc_no: 1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+        ],
+      },
+      {
+        subject_code: "22CSE249",
+        section_name: "CSE Gen A",
+        module_no: 3,
+        module_name: "Introduction to Algorithms",
+        module_description: "Introduction to Algorithms",
+        module_url: [
+          {
+            doc_type: "MAIN_MODULE",
+            doc_no: 1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+        ],
+      },
+      {
+        subject_code: "22CSE249",
+        section_name: "CSE Gen A",
+        module_no: 4,
+        module_name: "Introduction to Algorithms",
+        module_description: "Introduction to Algorithms",
+        module_url: [
+          {
+            doc_type: "MAIN_MODULE",
+            doc_no: 4.1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+          {
+            doc_type: "MAIN_MODULE",
+            doc_no: 4.2,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+        ],
+      },
+    ],
   });
+
   await prisma.modules.createMany({
-    data: {
-      subject_code: "22CSE107",
-      module_no: 1,
-      module_name: "Introduction to Data Communication",
-      module_description: "Basics of Data Communication and Networking",
-      module_url: [
-        {
-          doc_type: "SUB_MODULE",
-          doc_no: 1.1,
-          url: "https://www.example.com/intro-to-dcn",
-        },
-        {
-          doc_type: "SUB_MODULE",
-          doc_no: 1.2,
-          url: "https://www.example.com/intro-to-dcn",
-        },
-      ],
-    },
+    data: [
+      {
+        subject_code: "22CSE107",
+        section_name: "CSE Gen A",
+        module_no: 1,
+        module_name: "Introduction to Data Communication",
+        module_description: "Basics of Data Communication and Networking",
+        module_url: [
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 1.1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_1.pdf",
+          },
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 1.2,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_1.pdf",
+          },
+        ],
+      },
+      {
+        subject_code: "22CSE107",
+        section_name: "CSE Gen A",
+        module_no: 2,
+        module_name: "Basics of Data Communication",
+        module_description: "Basics of Data Communication and Networking",
+        module_url: [
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 2.1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 2.2,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+        ],
+      },
+      {
+        subject_code: "22CSE107",
+        section_name: "CSE Gen A",
+        module_no: 3,
+        module_name: "Basics of Data Communication",
+        module_description: "Basics of Data Communication and Networking",
+        module_url: [
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 3.1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 3.2,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+        ],
+      },
+      {
+        subject_code: "22CSE107",
+        section_name: "CSE Gen A",
+        module_no: 4,
+        module_name: "Basics of Data Communication",
+        module_description: "Basics of Data Communication and Networking",
+        module_url: [
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 4.1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 4.2,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+        ],
+      },
+      {
+        subject_code: "22CSE107",
+        section_name: "CSE Gen A",
+        module_no: 5,
+        module_name: "Basics of Data Communication",
+        module_description: "Basics of Data Communication and Networking",
+        module_url: [
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 5.1,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+          {
+            doc_type: "SUB_MODULE",
+            doc_no: 5.2,
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+          },
+        ],
+      },
+    ],
   });
 }
+
 main()
   .then(async () => {
     await prisma.$disconnect();
@@ -140,3 +368,6 @@ main()
     await prisma.$disconnect();
     process.exit(1);
   });
+
+// $HOST '/resourcesite/modules/22CSE332/CSE_Gen_E/22CSE332_1.pdf
+// $HOST '/resourcesite/modules/22CSE332/IOT_A/22CSE332_1.1.pdf

@@ -12,6 +12,7 @@ import {
   DrawerFooter,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+
 const Navbar = function () {
   return (
     <div className="flex justify-between bg-lback/80 dark:bg-dback/80 lg:p-2 p-1 items-center sticky top-0 z-50">
