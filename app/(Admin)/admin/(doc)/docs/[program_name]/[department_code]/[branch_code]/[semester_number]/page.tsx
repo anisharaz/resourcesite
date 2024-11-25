@@ -2,10 +2,12 @@ import { auth } from "@/auth";
 import prisma from "@/lib/db";
 import Link from "next/link";
 import { v4 } from "uuid";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-// TODO: fix the es lint to clear the type error in params
-async function SectionsPage({ params }) {
+
+async function SectionsPage({
+  params,
+}: {
+  params: Promise<{ semester_number: string }>;
+}) {
   const { semester_number } = await params;
   const session = await auth();
   const UserDBData = await prisma.user.findUnique({
