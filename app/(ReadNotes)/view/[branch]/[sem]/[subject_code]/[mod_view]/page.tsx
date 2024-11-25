@@ -3,6 +3,7 @@ import PdfViewer from "@/components/PdfViewer";
 import Sidebar from "./Sidebar";
 import { v4 } from "uuid";
 import { get_SubWithModules, get_module } from "@/app/actions/database";
+import { ChatUI } from "@/components/chat_ui";
 async function Module_view({
   params,
 }: {
@@ -14,25 +15,30 @@ async function Module_view({
   }>;
 }) {
   const param = await params;
+  const moduleParam = param.mod_view;
+  const [module, subModule] = moduleParam.split("_");
+  console.log(module, subModule);
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const data = await get_module(parseInt(param.mod_view));
-  // console.log(data?.module_url);
+  // console.log(data);
 
   const subject_data = await get_SubWithModules(param.subject_code);
   const modules = subject_data?.module;
-  const Sidebar_div = modules?.map((mod) => {
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  const Sidebar_div = modules[0].module_url?.map((mod) => {
     return (
       <div className="px-2" key={v4()}>
         <Sidebar
-          url={`/view/${param.branch}/${param.sem}/${param.subject_code}/${mod.id}`}
-          name={"Module:" + mod.module_no}
+          url={`/view/${param.branch}/${param.sem}/${param.subject_code}/${module}_${subModule}`}
+          name={"Module:" + mod.doc_no}
         />
       </div>
     );
   });
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  const Module_URL = data?.module_url[0].url as string;
+
   return (
     <>
       <div className="lg:flex font-serif">
@@ -52,7 +58,10 @@ async function Module_view({
           </div>
         </div>
         <div className="flex-1 h-screen">
-          <PdfViewer url={Module_URL} />
+          <PdfViewer
+            url={`${process.env.HOST_NAME}/resourcesite/modules/${param.subject_code}/CSE_GEN_E/${param.subject_code}_${module}.pdf`}
+          />
+          <ChatUI />
         </div>
       </div>
     </>
