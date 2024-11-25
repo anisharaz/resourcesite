@@ -30,6 +30,9 @@ async function Module_view({
       </div>
     );
   });
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  const Module_URL = data?.module_url[0].url as string;
   return (
     <>
       <div className="lg:flex font-serif">
@@ -49,7 +52,7 @@ async function Module_view({
           </div>
         </div>
         <div className="flex-1 h-screen">
-          <PdfViewer url={data?.module_url[0].url as string} />
+          <PdfViewer url={Module_URL} />
         </div>
       </div>
     </>

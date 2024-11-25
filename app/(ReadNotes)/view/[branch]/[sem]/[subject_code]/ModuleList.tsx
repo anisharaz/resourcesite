@@ -1,4 +1,5 @@
 import { get_SubWithModules } from "@/app/actions/database";
+import { module_url } from "@/lib/types";
 import Link from "next/link";
 // import { v4 } from "uuid";
 import { IoMdFolderOpen } from "react-icons/io";
@@ -19,7 +20,7 @@ async function ModuleList({
 
   const groupedModules = modules_array?.map((module) => ({
     moduleNo: module.module_no,
-    subModules: module.module_url,
+    subModules: module.module_url as module_url,
     moduleName: module.module_name,
   }));
   console.log(groupedModules);
