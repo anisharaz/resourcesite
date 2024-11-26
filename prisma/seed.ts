@@ -179,7 +179,7 @@ async function main() {
   await prisma.modules.createMany({
     data: [
       {
-        subject_code: "22CSE249",
+        subject_code: "22CSE330",
         section_name: "CSE Gen A",
         module_no: 1,
         module_name: "Introduction to Algorithms",
@@ -188,21 +188,21 @@ async function main() {
           {
             doc_type: "MAIN_MODULE",
             doc_no: 1,
-            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_1.pdf",
+            url: "https://static.aaraz.me/resourcesite/modules/22CSE330/CSE_GEN_E/22CSE330_1.pdf",
           },
         ],
       },
       {
-        subject_code: "22CSE249",
+        subject_code: "22AECCE11",
         section_name: "CSE Gen A",
         module_no: 2,
-        module_name: "Introduction to Algorithms",
+        module_name: "Introduction to Net",
         module_description: "Introduction to Algorithms",
         module_url: [
           {
             doc_type: "MAIN_MODULE",
             doc_no: 1,
-            url: "https://static.aaraz.me/resourcesite/modules/22CSE107/CSE_GEN_E/22CSE107_2.pdf",
+            url: "https://static.aaraz.me/resourcesite/modules/22AECCE11/CSE_GEN_E/22AECCE11_2.pdf",
           },
         ],
       },

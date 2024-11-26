@@ -27,10 +27,11 @@ export async function getPracticeQuiz(
     const response = await axios.post(
       "http://172.20.253.133:8880/getPracQuiz",
       {
-        collectionName,
         question,
+        collectionName,
       },
     );
+    console.log(response.data);
 
     return response.data;
   } catch (e) {
@@ -43,8 +44,8 @@ export async function getPracticeQuiz(
 export async function getQuiz(question: string, collectionName: string) {
   try {
     const response = await axios.post("http://172.20.253.133:8880/getQuiz", {
-      collectionName,
       question,
+      collectionName,
     });
 
     return response.data;

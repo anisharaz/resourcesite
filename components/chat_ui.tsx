@@ -1,27 +1,15 @@
 "use client";
 
 import { useState } from "react";
-// import { useEffect } from 'react';
 import { Loader } from "lucide-react";
 import { getResponse } from "@/app/actions/ai";
 
 export function ChatUI() {
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<string[]>([
+    "Hello! How can I help you today?",
+  ]);
   const [input, setInput] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     console.log(pdfPath);
-
-  //     const r = await uploadPdf(pdfPath);
-  //     console.log("hey");
-
-  //     console.log(r);
-
-  //   };
-  //   fetchData();
-  // }, [pdfPath]);
 
   const handleSend = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -31,7 +19,8 @@ export function ChatUI() {
         alert("Please enter a question.");
         return;
       } else {
-        const response = await getResponse(input, "c74455A965An");
+        const response = await getResponse(input, "cB5B243FF77n");
+        // const response = await getResponse(input, "cD42595D26An");
         setMessages([...messages, input, response.message]);
         setInput("");
       }
@@ -43,7 +32,12 @@ export function ChatUI() {
   };
 
   return (
-    <div className="w-1/5 bg-blue-950 p-4 flex flex-col h-96">
+    <div
+      className="bg-neutral-900 p-4 flex flex-col w-1/2"
+      style={{
+        height: "calc(100vh - 64px)",
+      }}
+    >
       <div className="flex-grow overflow-y-auto mb-4">
         {messages.map((message, index) => (
           <div key={index} className="bg-white text-black p-2 my-2 rounded">
@@ -56,7 +50,7 @@ export function ChatUI() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-grow p-2 rounded-l"
+          className="flex-grow p-2 rounded-l bg-neutral-500 text-white"
           placeholder="Type a message..."
         />
         {loading ? (

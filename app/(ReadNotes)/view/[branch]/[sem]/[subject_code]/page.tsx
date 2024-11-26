@@ -14,7 +14,7 @@ async function Modules({
   return (
     <>
       <div
-        className="bg-gray-100 p-2"
+        className="p-2"
         style={{
           minHeight: "calc(100vh - 52px)",
         }}

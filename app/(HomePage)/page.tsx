@@ -10,7 +10,7 @@ export default async function Home() {
     <>
       <Hero />
       <div className="bg-lpri dark:bg-dpri p-6 pt-10">
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-3 gap-10">
           <Suspense fallback={<BranchCardSkeletons />}>
             <Cards />
           </Suspense>

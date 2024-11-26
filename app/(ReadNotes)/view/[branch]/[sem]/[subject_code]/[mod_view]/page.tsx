@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import { v4 } from "uuid";
 import { get_SubWithModules, get_module } from "@/app/actions/database";
 import { ChatUI } from "@/components/chat_ui";
+
 async function Module_view({
   params,
 }: {
@@ -42,7 +43,7 @@ async function Module_view({
   return (
     <>
       <div className="lg:flex font-serif">
-        <div className="lg:p-2 lg:h-screen bg-white text-black dark:bg-black dark:text-white lg:px-4 flex flex-col">
+        <div className="lg:p-2 bg-white text-black dark:bg-black dark:text-white lg:px-4 flex flex-col">
           <div>
             <div className="text-xl lg:text-4xl underline underline-offset-4 lg:underline-offset-8 lg:py-4 ">
               Modules List
@@ -57,7 +58,7 @@ async function Module_view({
             </div>
           </div>
         </div>
-        <div className="flex-1 h-screen">
+        <div className="flex-1 flex">
           <PdfViewer
             url={`${process.env.HOST_NAME}/resourcesite/modules/${param.subject_code}/CSE_GEN_E/${param.subject_code}_${module}.pdf`}
           />
